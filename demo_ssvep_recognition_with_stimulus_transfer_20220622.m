@@ -20,16 +20,16 @@
 clear all;
 close all;
 
-addpath('..\mytoolbox\');
+addpath('mytoolbox\');
 Fs=250; % sample rate
 
-dataset_no=2; % 1: TH benchmark dataset, 2: BETA dataset, 3: BCI competition 2019 dataset
+dataset_no=1; % 1: TH benchmark dataset, 2: BETA dataset, 3: BCI competition 2019 dataset
 transfer_type=2;
 % 1: Source: 8.0, 8.4, 8.8, ..., 15.6 Hz, Target: 8.2, 8.6, 9.0, ..., 15.8 Hz
 % 2: Source: 8.2, 8.6, 9.0, ..., 15.8 Hz, Target: 8.0, 8.4, 8.8, ..., 15.6 Hz
 
 if dataset_no==1
-    str_dir='..\Tsinghua dataset 2016\';
+    str_dir='F:\datasets\Bench\';
     num_of_signal_templates=5;          % for mscca (1<=num_of_signal_templates<=20)
     num_of_signal_templates2=2;         % for ms-etrca (1<=num_of_signal_templates<=20)
     num_of_wn=4;                        % for TDCA
@@ -38,7 +38,7 @@ if dataset_no==1
     latencyDelay = round(0.14*Fs);      % latency
     num_of_subj=35;                     % Number of subjects (35 if you have the benchmark dataset)
     ch_used=[48 54 55 56 57 58 61 62 63]; % Pz, PO5, PO3, POz, PO4, PO6, O1,Oz, O2 (in SSVEP benchmark dataset)
-    num_of_trials=5;                    % Number of training trials (1<=num_of_trials<=5)
+    num_of_trials=1;                    % Number of training trials (1<=num_of_trials<=5)
     pha_val=[0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5 ...
         0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5 0 0.5 1 1.5]*pi;
     sti_f=[8.0:1:15.0, 8.2:1:15.2,8.4:1:15.4,8.6:1:15.6,8.8:1:15.8];
@@ -48,7 +48,7 @@ if dataset_no==1
     
     
 elseif dataset_no==2
-    str_dir='..\BETA SSVEP dataset\';
+    str_dir='F:\datasets\Beta\';
     num_of_signal_templates=5;          % for mscca (1<=num_of_signal_templates<=20)
     num_of_signal_templates2=2;         % for ms-etrca (1<=num_of_signal_templates<=20)
     num_of_wn=4;                        % for TDCA
